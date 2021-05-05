@@ -1,13 +1,14 @@
 import logo from './logo.svg';
+import 'bootstrap/dist/css/bootstrap.css';
 import './App.css';
 
-function App() {
+const App = () => {
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          I made a new change!
         </p>
         <a
           className="App-link"
@@ -17,6 +18,7 @@ function App() {
         >
           Learn React
         </a>
+        <button type="button" class="btn btn-primary">Button</button>
       </header>
     </div>
   );
