@@ -5,6 +5,7 @@ class TodoList extends Component {
     super(props);
     this.state = {
       todoInput: '',
+      items: [],
     };
   }
 
@@ -12,11 +13,21 @@ class TodoList extends Component {
     this.setState({ todoInput: event.target.value });
   }
 
+  handleSubmit(event) {
+    event.preventDefault();
+    
+    this.setState(state => {
+      const items = [ ...state.items, state.todoInput ];
+
+      return { todoInput: '', items };
+    });
+  }
+
   render () {
     return (
       <div>
         <h1>To-do List</h1>
-        <form>
+        <form onSubmit={this.handleSubmit}>
           <input
             value={this.state.todoInput}
             onChange={this.handleChange}
